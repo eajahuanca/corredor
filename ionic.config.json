@@ -1,0 +1,7 @@
+{
+  "name": "mitren",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
