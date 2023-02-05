@@ -1,0 +1,46 @@
+<ion-header >
+	<ion-toolbar>
+		<ion-title>Login</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <div class="title text-center">
+            Bienvenido<br>
+            a la App para <br>
+            Controlar Pasajeros
+            <div class="divider"></div>
+            <div class="formlogin">
+                <form (ngSubmit)="login()" [formGroup]="credentials">
+                    <ion-list>
+                        <ion-item class="box" [class.invalid]="credentials.controls['username'].errors && credentials.controls['username'].dirty">
+                            <ion-label position="stacked" class="label">Cuenta de usuario</ion-label>
+                            <ion-input formControlName="username" placeholder="Cuenta de usuario" class="input"></ion-input>
+                            <ion-icon name="person" class="icono"></ion-icon>
+                        </ion-item>
+                        <div class="validation-errors">
+                            <div class="error-message" *ngIf="credentials.controls['username'].errors && credentials.controls['username'].dirty">
+                              La cuenta de usuario es requerido
+                            </div>
+                        </div>
+                        <ion-item class="box" [class.invalid]="credentials.controls['password'].errors && credentials.controls['password'].dirty">
+                            <ion-label position="stacked" class="label"> Contraseña</ion-label>
+                            <ion-input type="password" formControlName="password" placeholder="contrasena" class="input"></ion-input>
+                            <ion-icon name="lock-closed" class="icono"></ion-icon>
+                        </ion-item>
+                        <div class="validation-errors">
+                            <div class="error-message" *ngIf="credentials.controls['password'].errors && credentials.controls['password'].dirty">
+                                La contraseña es requerida
+                            </div>
+                        </div>
+                    </ion-list>
+                    <ion-button type="submit" [disabled]="!credentials.valid"> 
+                        <ion-icon name="lock-open"></ion-icon> Authenticarse
+                    </ion-button>
+                  </form>
+            </div>
+        </div>
+        
+    </div>
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-menu contentId="content">
+	<ion-header>
+		<ion-toolbar>
+			<ion-card class="ion-no-margin ion-card">
+				<ion-img src="assets/img/header-menu.png" class="ion-img-width"></ion-img>
+				<ion-card-header class="ion-card-header">
+					Bienvenido
+				</ion-card-header>
+				<ion-card-subtitle class="ion-card-subtitle">
+					Mi Tren Metropolitano <br>
+					Cochabamba
+				</ion-card-subtitle>
+				<ion-card-content class="ion-card-content">
+					udti@oopp.gob.bo
+				</ion-card-content>
+			</ion-card>
+		</ion-toolbar>
+	</ion-header>
+
+	<ion-content>
+		<ion-list>
+			<ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+				<ion-item [routerLink]="[p.url]" routerDirection="root" lines="none" detail="false"
+					routerLinkActive="selected">
+					<ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+					<ion-label>{{ p.title }}</ion-label>
+				</ion-item>
+			</ion-menu-toggle>
+		</ion-list>
+
+		<ion-list id="labels-list">
+			<ion-list-header>Salir de la aplicación</ion-list-header>
+			<ion-item lines="none">
+				<ion-icon slot="start" ios="lock-closed" md="lock-closed"></ion-icon>
+				<ion-label>Salir</ion-label>
+			</ion-item>
+		</ion-list>
+
+		<ion-list id="labels-list">
+			<ion-list-header>Acerca de MOPSV</ion-list-header>
+			<div class="social-btns">
+				<ion-button fill="clear" class="ion-no-padding">
+					<a target="_blank" href="https://facebook.com/mopsv.bolivia">
+						<ion-img src="assets/img/facebook.png" class="img-facebook"></ion-img>
+					</a>
+				</ion-button>
+				<ion-button fill="clear" class="ion-no-padding">
+					<a target="_blank" href="https://twitter.com/mopsv_Bolivia">
+						<ion-img src="assets/img/twitter.png" class="img-twitter"></ion-img>
+					</a>
+				</ion-button>
+				<ion-button fill="clear" class="ion-no-padding">
+					<a target="_blank" href="https://www.youtube.com/@ministeriodeobraspublicas_9669">
+						<ion-img src="assets/img/youtube.png" class="img-youtube"></ion-img>
+					</a>
+				</ion-button>
+
+			</div>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+<ion-router-outlet id="content"></ion-router-outlet>
