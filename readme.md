@@ -1,4 +1,4 @@
-### Mi Tren
+# Corredor
 
 ## Requerimientos
 
@@ -6,6 +6,7 @@ Se debe tener instalado lo siguiente:
 
 ```
 node v16.15
+ionic/cli v6
 angular/cli v14
 Android SDK 7.0.1
 ```
